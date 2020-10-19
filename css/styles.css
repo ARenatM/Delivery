@@ -807,11 +807,11 @@ a {
   }
   .popup__content {
     width: 490px;
-    max-height: 400px;
+    max-height: 500px;
   }
 
   .popup__shopping-list {
-    max-height: 150px;
+    max-height: 170px;
     overflow-y: auto;
     overflow-x: hidden;
     -ms-overflow-style: none;
@@ -825,7 +825,7 @@ a {
 @media (max-width: 500px) {
   .popup__content {
     width: 300px;
-    max-height: 400px;
+    max-height: 500px;
   }
 
   .popup__header {
