@@ -19,6 +19,12 @@ blockquote,
 dl,
 dd {
   margin: 0;
+  padding: 0;
+}
+
+button {
+  outline: none;
+  cursor: pointer;
 }
 
 a {
@@ -51,8 +57,6 @@ a {
   line-height: 24px;
 
   color: #595959;
-
-  outline: none;
 
   box-shadow: 0 0 0px #555;
 
@@ -120,6 +124,10 @@ a {
   margin-left: auto;
 
   background-image: url(../images/search.svg);
+}
+
+.lock {
+  overflow: hidden;
 }
 
 /* Header */
@@ -604,5 +612,252 @@ a {
   .purchase .button__text {
     display: inline-block;
     font-size: 12px;
+  }
+}
+
+/* Popup */
+
+.popup {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  background-color: rgba(0, 0, 0, 0.4);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: all 0.5s ease;
+}
+
+.popup.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup__body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.popup__content {
+  width: 756px;
+  max-height: 550px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 40px 45px;
+  padding-bottom: 55px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  transform: translate(0, -100%);
+
+  transition: all 0.5s ease;
+
+  position: relative;
+
+  -ms-overflow-style: none;
+}
+
+.popup__content::-webkit-scrollbar {
+  width: 0;
+}
+
+.popup.open .popup__content {
+  transform: translate(0, 0);
+}
+
+.popup__header {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+
+  margin-bottom: 39px;
+}
+.popup__shopping {
+}
+.popup__shopping-list {
+}
+.popup__shopping-list__item {
+  display: flex;
+  align-items: center;
+
+  border-bottom: 1px solid #d9d9d9;
+
+  margin-bottom: 10px;
+
+  padding: 5px 0;
+}
+.shopping-list__name {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 32px;
+}
+.shopping-list__cost {
+  margin-left: auto;
+  margin-right: 47px;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.shopping-list__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shopping-list__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  border: 1px solid #40a9ff;
+  background-color: transparent;
+  border-radius: 3px;
+  width: 37px;
+  height: 32px;
+
+  font-family: "Bilbo";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+
+  transition: background-color 0.1s linear;
+  transition: color 0.1s linear;
+}
+
+.shopping-list__button:hover {
+  border: 2px solid #40a9ff;
+}
+.shopping-list__button:active {
+  border: 2px solid #1890ff;
+  background-color: #1890ff;
+  color: #fff;
+}
+.shopping-list__count {
+  margin-right: 15px;
+
+  font-family: "Bilbo";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.popup__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 53px;
+}
+.popup__cost {
+  padding: 15px 20px;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+
+  color: #fafafa;
+
+  border-radius: 5px;
+
+  background-color: #262626;
+}
+.popup__butons {
+  display: flex;
+}
+.popup__button-buy {
+}
+.popup__button-cancel {
+}
+.popup__close {
+  position: absolute;
+  top: 46px;
+  right: 45px;
+
+  cursor: pointer;
+}
+.close-popup {
+}
+
+@media (max-width: 768px) {
+  .popup__content {
+    width: 560px;
+  }
+}
+
+@media (max-width: 578px) {
+  .popup__content {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+@media (max-width: 500px) {
+  .popup__header {
+    margin-bottom: 20px;
+
+    font-size: 32px;
+  }
+
+  .popup__shopping-list__item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .shopping-list__name {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  .shopping-list__cost {
+    margin: 2px auto;
+  }
+
+  .popup__footer {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 32px;
+  }
+  .popup__butons {
+    display: flex;
+    flex-direction: column;
+  }
+  .popup__button-buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    margin: 10px 0;
+  }
+  .popup__button-cancel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+  }
+  .popup__cost {
+    font-size: 16px;
+
+    padding: 10px 15px;
   }
 }
