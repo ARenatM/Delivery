@@ -805,6 +805,21 @@ a {
   .popup__body {
     height: 100vh;
   }
+  .popup__content {
+    width: 490px;
+    max-height: 400px;
+  }
+
+  .popup__shopping-list {
+    max-height: 150px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+  }
+
+  .popup__shopping-list::-webkit-scrollbar {
+    width: 0;
+  }
 }
 
 @media (max-width: 500px) {
