@@ -861,3 +861,10 @@ a {
     padding: 10px 15px;
   }
 }
+
+@media screen {
+  .button:hover {
+    box-shadow: none;
+    transform: none;
+  }
+}
