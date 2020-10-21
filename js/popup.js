@@ -77,8 +77,11 @@ var reduceCount = (e) => {
 
 var cancel = (e) => {
   shopping = [];
-  shoppingToPopup();
+
   closePopup();
+  setTimeout(() => {
+    shoppingToPopup();
+  }, timeout);
 };
 
 function bodyLock(e) {
@@ -96,7 +99,7 @@ function bodyUnlock(e) {
 
 document.querySelector(".popup__body").addEventListener("click", (e) => {
   if (isOpen) {
-    if (popupBody.querySelector(e.target.classList)) {
+    if (!e.target.closest(".popup__content")) {
       closePopup(e);
     }
   }
