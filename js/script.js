@@ -3,7 +3,10 @@ const popupBody = document.querySelector(".popup__body");
 const popupList = document.querySelector(".popup__shopping-list");
 const popupCost = document.querySelector(".popup__cost");
 const body = document.querySelector("body");
+const shoppingHeader = document.querySelector(".header__shopping-count");
 const timeout = 500;
+
+console.log(shoppingHeader);
 
 var shopping = [];
 
@@ -30,6 +33,8 @@ var inShopping = (e) => {
       calculateCost();
       shoppingToPopup();
     }
+
+    shoppingHeader.innerText = shopping.length;
   }
   //Если массив пустой добавить
   else {
@@ -41,8 +46,8 @@ var inShopping = (e) => {
     calculateCost();
     shoppingToPopup();
   }
-
   openPopup(e);
+  shoppingHeader.innerText = shopping.length;
 };
 
 function shoppingToHTML() {

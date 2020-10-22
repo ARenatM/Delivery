@@ -60,7 +60,7 @@ var reduceCount = (e) => {
     });
 
     shopping.splice(i, 1);
-
+    shoppingHeader.innerText = shopping.length;
     shoppingToPopup();
   }
 

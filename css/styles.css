@@ -144,6 +144,22 @@ a {
   align-items: center;
 }
 
+.header__shopping {
+  position: relative;
+}
+.header__shopping-count {
+  position: absolute;
+  top: 5px;
+  left: 12px;
+  background-color: rgb(87, 126, 255);
+  font-size: 12px;
+  line-height: 1;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  color: #fff;
+}
+
 /* Promo */
 .main {
   padding-bottom: 60px;
@@ -840,6 +856,7 @@ a {
 
 @media (max-width: 500px) {
   .popup__content {
+    padding: 10px;
     width: 300px;
     max-height: 500px;
   }
@@ -862,6 +879,8 @@ a {
   }
 
   .shopping-list__name {
+    text-align: center;
+
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
