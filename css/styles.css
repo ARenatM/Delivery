@@ -780,6 +780,8 @@ a {
 .shopping-list__count {
   margin-right: 15px;
 
+  width: 10px;
+
   font-family: "Bilbo";
   font-style: normal;
   font-weight: normal;

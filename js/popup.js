@@ -78,6 +78,7 @@ var reduceCount = (e) => {
 var cancel = (e) => {
   shopping = [];
 
+  shoppingHeader.innerText = shopping.length;
   closePopup();
   setTimeout(() => {
     shoppingToPopup();
