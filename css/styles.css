@@ -652,8 +652,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 10000px;
-  height: 10000px;
+  width: 100%;
+  height: 100vh;
 }
 .popup__content {
   width: 756px;
